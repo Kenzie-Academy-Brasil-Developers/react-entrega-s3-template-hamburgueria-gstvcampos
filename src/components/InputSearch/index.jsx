@@ -1,7 +1,3 @@
-import logo from "../../assets/logo.svg"
-import { StyledContainer } from "../../styles/container"
-import { StyledHeader } from "./style"
-
 
 function Header() {
   return (

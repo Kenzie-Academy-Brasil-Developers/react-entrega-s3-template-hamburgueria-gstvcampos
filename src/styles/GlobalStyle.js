@@ -28,12 +28,7 @@ export default createGlobalStyle`
   }
 
   body {
-    /* background: linear-gradient(180deg, #084B8A 0%, #141414 60%);
-    background-attachment: fixed;
-    color: var(--color-gray-100);
     -webkit-font-smoothing: antialiased;
-
-    overflow-x: hidden; */
   }
 
   body, input, button, textarea {
