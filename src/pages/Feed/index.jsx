@@ -5,6 +5,8 @@ function Feed() {
   const [listBurguers, setListBurguers] = useState([])
   const [isLoading, setIsLoading] = useState(true)
 
+  
+
   useEffect(() => {
     const getBurguers = async () => {
       try {
