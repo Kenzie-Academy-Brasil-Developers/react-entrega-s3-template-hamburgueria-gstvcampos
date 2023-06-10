@@ -1,42 +1,34 @@
 import styled from "styled-components";
 
-export const StyledTitle1 = styled.h1`
-    font-family: var(--Font-Primary);
-    font-size: 2.375rem;
-    font-weight: 800;    
-    color: var(--Color-Gray-4);  
+export const StyledHeading = styled.h2`
+    font-size: 1.125rem;
+    font-weight: 700;    
+
+    color: ${props => props.color === 'white' ? 'var(--color-white)' : 'var(--color-grey-600)'};
 `
 
-export const StyledTitle2 = styled.h2`
-    font-family: var(--Font-Primary);
-    font-size: 1.375rem;
-    font-weight: 700;    
-    color: var(--Color-Gray-4);  
-`
-
-export const StyledTitle3 = styled.h3`
-    font-family: var(--Font-Primary);
-    font-size: 1rem;
-    font-weight: 700;    
-    color: ${props => props.color === 'primary' ? 'var(--Color-primary)' : 'var(--Color-Gray-4)'};
-`
-export const StyledTitle4 = styled.h4`
-    font-family: var(--Font-Primary);
-    font-size: .75rem;
-    font-weight: 600;    
-    color: var(--Color-Gray-4);  
-`
+/* <StyledTitle3 className="value" color="primary">{formattedAmount}</StyledTitle3> */
 
 export const StyledHeadline = styled.h3`
-    font-family: var(--Font-Primary);
-    font-size: 1rem;
-    font-weight: 400;    
-    color: var(--Color-Grey-3);  
+    font-size: .875rem;
+    font-weight: 600;    
+    color: var(--color-grey-600);  
 `
 
 export const StyledBody = styled.p`
-    font-family: var(--Font-Primary);
+    font-size: .875rem;
+    font-weight: 600;    
+    color: var(--color-grey-300);  
+`
+
+export const StyledBody600 = styled.p`
+    font-size: .875rem;
+    font-weight: 600;    
+    color: var(--color-primary);  
+`
+
+export const StyledCaption = styled.span`
     font-size: .75rem;
     font-weight: 400;    
-    color: var(--Color-Grey-3);  
+    color: var(--color-grey-300);  
 `
