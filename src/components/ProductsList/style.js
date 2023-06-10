@@ -1,11 +1,14 @@
 import styled from "styled-components";
 
 export const StyledUl = styled.ul`
-  list-style: none;
   display: flex;
+  justify-content: center;
+  align-items: center;
   flex-wrap: wrap;
-
+  
+  list-style: none;
   gap: 2rem;
+  
   width: 100%;
   max-width: 1200px;
 

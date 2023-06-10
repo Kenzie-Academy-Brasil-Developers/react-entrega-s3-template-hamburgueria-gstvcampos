@@ -6,7 +6,6 @@ import ProductsList from '../../components/ProductsList'
 
 function Feed() {
   const [listBurguers, setListBurguers] = useState([])
-  const [isLoading, setIsLoading] = useState(true)
   const [inputSearch, setInputSearch] = useState('')
 
   const filteredBurgers = listBurguers.filter(burger =>
@@ -22,26 +21,16 @@ function Feed() {
         setListBurguers(reponse.data)
       } catch (error) {
 
-        //criar toast erro
         console.error(error)
 
       } finally {
-        setIsLoading(false)
+
       }
     }
 
     getBurguers()
 
   }, [])
-
-
-  //criar toast
-  if (isLoading) {
-    return <div>Loagind...</div>
-  }
-  // ou colocar em condicional isLoadign ? carregamento : pagina
-
-  console.log(filteredBurgers)
 
   return (
     <>
