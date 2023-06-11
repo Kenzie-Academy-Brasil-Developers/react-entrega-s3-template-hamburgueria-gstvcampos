@@ -1,35 +1,48 @@
 import { useState } from "react"
-import logo from "../../assets/logo.svg"
-import search from "../../assets/search.svg"
+
 import { StyledInput, StyledFormContainer } from "../../styles/Input"
 import { StyledContainer } from "../../styles/container"
 import { StyledHeader } from "./style"
 import { FaShoppingCart } from "react-icons/fa"
+
+import logo from "../../assets/logo.svg"
+import search from "../../assets/search.svg"
+
 import Modal from "../Modal"
 
-function Header({ setInputSearch }) {
+function Header({ setInputSearch, listShopping, setListShopping }) {
   const [isOpen, setIsOpen] = useState(false)
+
+  const handleOpenModal = () => {
+    setIsOpen(true);
+  };
+
 
   const handleSubmit = (event) => {
     event.preventDefault()
   }
 
+  const items = listShopping.length
+
+
   return (
     <StyledHeader>
-      <StyledContainer>
+      <StyledContainer className="container">
         <div className="flexbox">
           <img src={logo} alt="logo Burguer Kenzie" />
         </div>
         <StyledFormContainer onSubmit={handleSubmit}>
 
-          <a onClick={() => setIsOpen(true)}>
-            <span>0</span>
+          <a onClick={handleOpenModal}>
+            <span>{items}</span>
             <FaShoppingCart color="#BDBDBD" size={30}></FaShoppingCart>
           </a>
 
-          {isOpen ? <Modal setIsOpen={setIsOpen}></Modal> : null}
+          {isOpen ? 
+            <Modal setIsOpen={setIsOpen} listShopping={listShopping} setListShopping={setListShopping}></Modal> 
+            : null}
 
-          <StyledInput 
+          <StyledInput
             type="text"
             onChange={(event) => setInputSearch(event.target.value)}
           />

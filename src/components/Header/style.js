@@ -1,8 +1,17 @@
 import styled from "styled-components";
 
 export const StyledHeader = styled.header`
-  max-width: 100%;
+  max-width: 100vw;
   background-color: var(--color-grey-000);
+
+
+
+  @media screen and (max-width: 723px){
+    .container {
+      justify-content: center;
+      align-items: center;
+    }
+  }
 
   div > .flexbox {
     height: 90px;

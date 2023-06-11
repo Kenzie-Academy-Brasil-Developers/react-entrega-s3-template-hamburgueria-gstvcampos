@@ -7,11 +7,14 @@ import ProductsList from '../../components/ProductsList'
 function Feed() {
   const [listBurguers, setListBurguers] = useState([])
   const [inputSearch, setInputSearch] = useState('')
+  const [listShopping, setListShopping] = useState([])
 
   const filteredBurgers = listBurguers.filter(burger =>
     burger.name.toLowerCase().includes(inputSearch.toLowerCase()) ||
     burger.category.toLowerCase().includes(inputSearch.toLowerCase())
   )
+
+  console.log(listShopping)
 
   useEffect(() => {
     const getBurguers = async () => {
@@ -34,10 +37,10 @@ function Feed() {
 
   return (
     <>
-      <Header setInputSearch={setInputSearch} />
+      <Header setInputSearch={setInputSearch} setListShopping={setListShopping} listShopping={listShopping}/>
       <ProductsList>
         {
-          filteredBurgers.map((burguer) => <Product key={burguer.id} burguer={burguer}></Product>)
+          filteredBurgers.map((burguer) => <Product listShopping={listShopping} setListShopping={setListShopping} key={burguer.id} burguer={burguer}></Product>)
         }
       </ProductsList>
     </>

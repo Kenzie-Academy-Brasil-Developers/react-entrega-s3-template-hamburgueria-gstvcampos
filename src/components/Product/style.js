@@ -13,6 +13,11 @@ export const StyledLi = styled.li`
     border: 2px solid var(--color-primary);
   }
 
+  img {
+    max-width: 100%;
+    max-height: 100%;
+  }
+
   .div__img {
     display: flex;
     align-items: center;

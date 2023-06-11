@@ -1,45 +1,78 @@
-import { useRef } from "react";
-import { StyledHeading } from "../../styles/Typography";
-import { useEffect } from "react";
+import useOutClick from "../../hooks/useOutClick";
+import useKeydowm from "../../hooks/useKeydowm";
 
-function Modal({ setIsOpen }) {
-  const modalRef = useRef(null)
+import { AiOutlineClose } from "react-icons/ai"
+import empty from "../../assets/empty.png"
 
-  useEffect(() => {
-    const handleOutclick = (event) => {
-      if (!modalRef.current?.contains(event.target)) {
-        setIsOpen(false)
-      }
-    }
+import { ModalOverlay, ModalWrapper } from "./style"
+import { StyledBody, StyledHeading, StyledHeadline } from "../../styles/Typography"
 
-    window.addEventListener("mousedown", handleOutclick)
+import FormattedPrice from "../FormattedPrice";
+import ShoppingList from "../ShopingList";
+import ShoppingCard from "../ShoppingCard";
 
-    return () => {
-      window.removeEventListener("mousedown", handleOutclick)
-    }
-  }, [])
+function Modal({ setIsOpen, listShopping, setListShopping }) {
+  const modalRef = useOutClick(() => {
+    setIsOpen(false)
+  })
 
-  // const value = burguer.price.toLocaleString("pt-BR", {
-  //   style: "currency",
-  //   currency: "BRL",
-  // })
+  const buttonRef = useKeydowm("Escape", (element) => {
+    element.click()
+  })
 
-  {/* <StyledHeading>Carrinho de compras</StyledHeading> */ }
+  const total = listShopping.reduce((accumulator, burguer) => {
+    return accumulator + burguer.price
+  }, 0)
+
+  const handleRemoveAll = () => {
+    setListShopping([]);
+  }
 
   return (
-    <div role="dialog">
-      <div ref={modalRef}>
-        <button
-          onClick={() => setIsOpen(false)}
-        >
+    <ModalOverlay role="dialog">
+      <ModalWrapper ref={modalRef}>
 
-        </button>
+        <header>
+          <StyledHeading color="white">Carrinho de compras</StyledHeading>
+          <button
+            onClick={() => setIsOpen(false)}
+            ref={buttonRef}
+          >
+            <AiOutlineClose size={20} color="#ffffff80"></AiOutlineClose>
+          </button>
+        </header>
+
+        <ShoppingList>
+          { total === 0 ? (
+            <img src={empty} alt="Lista vazia"/>
+          ) : (
+            listShopping.map((burguer) => <ShoppingCard setListShopping={setListShopping} key={burguer.id} burguer={burguer}></ShoppingCard>)
+          )}
+        </ShoppingList>
 
 
+        <footer>
+          <div className="line__container">
+            <div className="line"></div>
+          </div>
 
-      </div>
-    </div>
+          <div className="value__container">
+            <StyledHeadline>Total</StyledHeadline>
+            <StyledBody>
+              <FormattedPrice price={total} />
+            </StyledBody>
+          </div>
+          
+          <button 
+            className="remover__button" 
+            onClick={handleRemoveAll}
+            >Remover Todos
+          </button>
+        </footer>
+
+      </ModalWrapper>
+    </ModalOverlay>
   )
 }
 
-export default Modal
+export default Modal;

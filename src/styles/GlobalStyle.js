@@ -29,6 +29,7 @@ export default createGlobalStyle`
   }
 
   body {
+    overflow-x: hidden;
     -webkit-font-smoothing: antialiased;
   }
 

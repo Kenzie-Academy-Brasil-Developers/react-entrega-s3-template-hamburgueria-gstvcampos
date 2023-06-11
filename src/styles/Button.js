@@ -22,7 +22,7 @@ export const StyledButtonMedium = styled.button`
 
     padding: 1.25rem;
     
-    color: var(--color-white);
+    color: var(--color-grey-300);
     background-color: var(--color-grey-100);
     border: 1px solid var(--color-grey-100);   
     border-radius: 0.5rem;
