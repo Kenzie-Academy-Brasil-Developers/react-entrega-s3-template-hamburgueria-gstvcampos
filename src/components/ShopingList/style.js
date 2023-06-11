@@ -13,10 +13,4 @@ export const StyledUl = styled.ul`
 
   padding: 0;
   background-color: white;
-
-  img {
-    align-self: center;
-    max-width: 70%;
-    max-height: 70%;
-  }
 `

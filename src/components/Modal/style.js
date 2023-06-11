@@ -15,7 +15,8 @@ export const ModalWrapper = styled.div`
   position: fixed;
   top: 50%;
   left: 50%;
-  max-width: 90%;
+  max-width: 500px;
+  min-width: 375px;
   transform: translate(-50%, -50%);
 
   header{
@@ -24,7 +25,6 @@ export const ModalWrapper = styled.div`
     align-items: center;
 
     max-width: 100%;
-    width: 500px;
     padding: .8125rem 1.375rem;
     border-radius: 5px 5px 0px 0px;
 

@@ -2,7 +2,7 @@ import useOutClick from "../../hooks/useOutClick";
 import useKeydowm from "../../hooks/useKeydowm";
 
 import { AiOutlineClose } from "react-icons/ai"
-import empty from "../../assets/empty.png"
+import empty from "../../assets/empty.svg"
 
 import { ModalOverlay, ModalWrapper } from "./style"
 import { StyledBody, StyledHeading, StyledHeadline } from "../../styles/Typography"

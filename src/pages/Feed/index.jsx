@@ -14,8 +14,6 @@ function Feed() {
     burger.category.toLowerCase().includes(inputSearch.toLowerCase())
   )
 
-  console.log(listShopping)
-
   useEffect(() => {
     const getBurguers = async () => {
       try {
