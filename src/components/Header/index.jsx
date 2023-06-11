@@ -1,7 +1,7 @@
 import { useState } from "react"
 
 import { StyledInput, StyledFormContainer } from "../../styles/Input"
-import { StyledContainer } from "../../styles/container"
+import { StyledContainer } from "../../styles/Container"
 import { StyledHeader } from "./style"
 import { FaShoppingCart } from "react-icons/fa"
 
