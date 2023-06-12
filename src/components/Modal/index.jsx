@@ -7,9 +7,9 @@ import empty from "../../assets/empty.svg"
 import { ModalOverlay, ModalWrapper } from "./style"
 import { StyledBody, StyledHeading, StyledHeadline } from "../../styles/Typography"
 
-import FormattedPrice from "../FormattedPrice";
-import ShoppingList from "../ShopingList";
-import ShoppingCard from "../ShoppingCard";
+import FormattedPrice from "../FormattedPrice"
+import ShoppingList from "../ShopingList"
+import ShoppingCard from "../ShoppingCard"
 
 function Modal({ setIsOpen, listShopping, setListShopping }) {
   const modalRef = useOutClick(() => {
@@ -25,7 +25,7 @@ function Modal({ setIsOpen, listShopping, setListShopping }) {
   }, 0)
 
   const handleRemoveAll = () => {
-    setListShopping([]);
+    setListShopping([])
   }
 
   return (
@@ -74,4 +74,4 @@ function Modal({ setIsOpen, listShopping, setListShopping }) {
   )
 }
 
-export default Modal;
+export default Modal

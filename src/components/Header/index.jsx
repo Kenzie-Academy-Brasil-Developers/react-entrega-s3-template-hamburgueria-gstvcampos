@@ -14,8 +14,8 @@ function Header({ setInputSearch, listShopping, setListShopping }) {
   const [isOpen, setIsOpen] = useState(false)
 
   const handleOpenModal = () => {
-    setIsOpen(true);
-  };
+    setIsOpen(true)
+  }
 
 
   const handleSubmit = (event) => {

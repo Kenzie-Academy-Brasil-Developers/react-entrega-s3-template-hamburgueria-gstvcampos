@@ -7,4 +7,4 @@ const FormattedPrice = ({ price }) => {
   return <>{formattedPrice}</>
 }
 
-export default FormattedPrice;
+export default FormattedPrice

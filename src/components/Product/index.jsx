@@ -1,11 +1,11 @@
-import { StyledButtonDefault } from "../../styles/Button";
-import { StyledBody600, StyledCaption, StyledHeading } from "../../styles/Typography";
-import { StyledLi } from "./style";
+import { StyledButtonDefault } from "../../styles/Button"
+import { StyledBody600, StyledCaption, StyledHeading } from "../../styles/Typography"
+import { StyledLi } from "./style"
 
-import FormattedPrice from "../FormattedPrice";
-import { ToastContainer, toast } from 'react-toastify';
+import FormattedPrice from "../FormattedPrice"
+import { ToastContainer, toast } from 'react-toastify'
 
-import 'react-toastify/dist/ReactToastify.css';
+import 'react-toastify/dist/ReactToastify.css'
 
 function Product({ burguer, listShopping, setListShopping }) {
 
