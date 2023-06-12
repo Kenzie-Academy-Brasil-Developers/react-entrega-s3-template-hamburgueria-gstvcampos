@@ -13,4 +13,9 @@ export const StyledUl = styled.ul`
 
   padding: 0;
   background-color: white;
+
+  img {
+    max-width: 100%;
+    max-height: 100%;
+  }
 `

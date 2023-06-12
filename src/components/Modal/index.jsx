@@ -50,7 +50,6 @@ function Modal({ setIsOpen, listShopping, setListShopping }) {
           )}
         </ShoppingList>
 
-
         <footer>
           <div className="line__container">
             <div className="line"></div>
